@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -36,7 +36,7 @@ const CreateRoom = (props) =>{
         };
         fetch('/api/create-room', requestOptions)
         .then((response) => response.json()
-        ).then((data) => console.log(data));
+        ).then((data) => props.history.push('/room/' + data.code));
     }
 
     return (
